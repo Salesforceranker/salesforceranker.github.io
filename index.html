@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="snapPDF: Generate PDFs and CSVs from Salesforce records with ease.">
+    <meta name="keywords" content="snapPDF, Salesforce, PDF generator, CSV export, template selection, secure PDFs">
+    <title>snapPDF - Seamless Salesforce Document Generation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <style>
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background: linear-gradient(135deg, #e0f2fe 0%, #fef3ae 100%); 
+        }
+        .snap-logo { 
+            font-size: 3rem; 
+            font-weight: 900; 
+            display: inline-flex; 
+            align-items: center;
+        }
+        .snap-logo .snap { 
+            color: #FF9933; /* Saffron */
+        }
+        .snap-logo .p { 
+            color: #FFFFFF; /* White */
+            -webkit-text-stroke: 1px black; /* Dark outline for visibility */
+        }
+        .snap-logo .df { 
+            color: #138808; /* Green */
+        }
+        .btn-primary { transition: transform 0.3s ease, background-color 0.3s ease; }
+        .btn-primary:hover { transform: scale(1.05); background-color: #1e40af; }
+        .feature-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
+        .faq-item p { transition: max-height 0.3s ease; font-size: 0.9rem; }
+        .smooth-scroll { scroll-behavior: smooth; }
+        .counter { display: inline-block; font-size: 2.5rem; }
+        .logo-img { transition: filter 0.3s ease; }
+        .logo-img:hover { filter: grayscale(0); }
+    </style>
+</head>
+<body class="smooth-scroll">
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-16 text-center" data-aos="fade-down">
+        <h1 class="snap-logo">
+            <span class="snap">snap</span><span class="p">P</span><span class="df">DF</span>
+        </h1>
+        <p class="text-xl mt-2 max-w-2xl mx-auto">One Click. Multiple Records. One Perfect PDF or CSV.</p>
+        <a href="https://appexchange.salesforce.com/" target="_blank" class="mt-6 inline-block bg-orange-500 text-white py-3 px-8 rounded-full text-lg font-semibold btn-primary">Get snapPDF on AppExchange</a>
+    </header>
+
+    <!-- Core Features Section -->
+    <section class="max-w-6xl mx-auto py-12 px-4" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-gray-800 text-center">Core Features</h2>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="feature-card bg-white p-6 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="100">
+                <h3 class="text-xl font-semibold text-blue-800">PDF Generation</h3>
+                <p class="mt-2 text-gray-600">Create professional PDFs with customizable fields and branding.</p>
+            </div>
+            <div class="feature-card bg-white p-6 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="200">
+                <h3 class="text-xl font-semibold text-blue-800">CSV Export</h3>
+                <p class="mt-2 text-gray-600">Export Salesforce records to CSV with clean formatting and NA for missing values.</p>
+            </div>
+            <div class="feature-card bg-white p-6 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="300">
+                <h3 class="text-xl font-semibold text-blue-800">Email Integration</h3>
+                <p class="mt-2 text-gray-600">Send generated files directly via email with contact lookup.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Reasons to Choose snapPDF Section -->
+    <section class="bg-gray-100 py-12 px-4" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-gray-800 text-center">More Reasons to Choose snapPDF</h2>
+        <div class="max-w-6xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="feature-card bg-white p-6 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="100">
+                <h3 class="text-xl font-semibold text-blue-800">Confidential PDF</h3>
+                <p class="mt-2 text-gray-600">Secure your PDFs with encryption and access controls for sensitive data.</p>
+            </div>
+            <div class="feature-card bg-white p-6 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="200">
+                <h3 class="text-xl font-semibold text-blue-800">Multiple Records Support</h3>
+                <p class="mt-2 text-gray-600">Process multiple Salesforce records across pagination with ease.</p>
+            </div>
+            <div class="feature-card bg-white p-6 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="300">
+                <h3 class="text-xl font-semibold text-blue-800">Custom Headers & Footers</h3>
+                <p class="mt-2 text-gray-600">Personalize headers and footers for PDFs and CSVs to match your brand.</p>
+            </div>
+            <div class="feature-card bg-white p-6 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="400">
+                <h3 class="text-xl font-semibold text-blue-800">Search and Filter Support</h3>
+                <p class="mt-2 text-gray-600">Easily search and filter Salesforce records before generating files.</p>
+            </div>
+            <div class="feature-card bg-white p-6 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="500">
+                <h3 class="text-xl font-semibold text-blue-800">Record Viewing Before Download</h3>
+                <p class="mt-2 text-gray-600">Preview records in a user-friendly interface before exporting.</p>
+            </div>
+            <div class="feature-card bg-white p-6 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="600">
+                <h3 class="text-xl font-semibold text-blue-800">Template Selection</h3>
+                <p class="mt-2 text-gray-600">Choose from a variety of pre-designed templates to match your brand.</p>
+            </div>
+            <div class="feature-card bg-white p-6 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="700">
+                <h3 class="text-xl font-semibold text-blue-800">Theme Support</h3>
+                <p class="mt-2 text-gray-600">Customize colors and styles to create a cohesive look across documents.</p>
+            </div>
+            <div class="feature-card bg-white p-6 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="800">
+                <h3 class="text-xl font-semibold text-blue-800">Extensibility</h3>
+                <p class="mt-2 text-gray-600">Easily integrate with other Salesforce tools and future-proof your workflows.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="max-w-6xl mx-auto py-12 px-4 text-center" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-gray-800">snapPDF by the Numbers</h2>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div data-aos="zoom-in" data-aos-delay="100">
+                <p class="counter text-4xl font-bold text-blue-800" id="pdf-count">0</p>
+                <p class="text-gray-600">PDFs Generated</p>
+            </div>
+            <div data-aos="zoom-in" data-aos-delay="200">
+                <p class="counter text-4xl font-bold text-blue-800" id="hours-count">0</p>
+                <p class="text-gray-600">Hours Saved</p>
+            </div>
+            <div data-aos="zoom-in" data-aos-delay="300">
+                <p class="counter text-4xl font-bold text-blue-800" id="templates-count">0</p>
+                <p class="text-gray-600">Predefined Templates Available</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="max-w-6xl mx-auto py-12 px-4" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-gray-800 text-center">What Users Say</h2>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-right">
+                <p class="text-gray-600 italic">"snapPDF transformed our Salesforce workflow. Generating PDFs is now a breeze!"</p>
+                <p class="mt-4 font-semibold text-blue-800">– Sarah M., Salesforce Admin</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-left">
+                <p class="text-gray-600 italic">"The CSV export feature saved us hours of manual work. Highly recommend!"</p>
+                <p class="mt-4 font-semibold text-blue-800">– John D., Business Analyst</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="max-w-6xl mx-auto py-12 px-4 text-center" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-gray-800">Trusted Integrations</h2>
+        <div class="mt-8 flex justify-center gap-8 flex-wrap">
+            <img src="https://via.placeholder.com/150x50?text=Salesforce" alt="Salesforce" class="h-12 logo-img grayscale hover:grayscale-0">
+            <img src="https://via.placeholder.com/150x50?text=AppExchange" alt="AppExchange" class="h-12 logo-img grayscale hover:grayscale-0">
+            <img src="https://via.placeholder.com/150x50?text=Client+Logo" alt="Client" class="h-12 logo-img grayscale hover:grayscale-0">
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="max-w-6xl mx-auto py-12 px-4" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-gray-800 text-center">Frequently Asked Questions</h2>
+        <div class="mt-8 space-y-4">
+            <div class="faq-item bg-white p-4 rounded-lg shadow-lg">
+                <button class="faq-toggle w-full text-left text-lg font-semibold text-blue-800">How does snapPDF integrate with Salesforce?</button>
+                <p class="mt-2 text-gray-600 hidden">snapPDF seamlessly integrates via the AppExchange, enabling one-click PDF and CSV generation from Salesforce records.</p>
+            </div>
+            <div class="faq-item bg-white p-4 rounded-lg shadow-lg">
+                <button class="faq-toggle w-full text-left text-lg font-semibold text-blue-800">Is snapPDF secure for sensitive data?</button>
+                <p class="mt-2 text-gray-600 hidden">Yes, snapPDF uses encryption and access controls to ensure your confidential PDFs are protected.</p>
+            </div>
+            <div class="faq-item bg-white p-4 rounded-lg shadow-lg">
+                <button class="faq-toggle w-full text-left text-lg font-semibold text-blue-800">What templates are available?</button>
+                <p class="mt-2 text-gray-600 hidden">snapPDF offers a variety of pre-designed templates, customizable to match your brand.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developer Section -->
+    <section class="bg-blue-50 py-12 px-4" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-gray-800 text-center">Meet the Developer</h2>
+        <div class="max-w-2xl mx-auto mt-8 text-center">
+            <p class="text-gray-600">snapPDF was created by <span class="font-semibold text-blue-800">Rishabh Jain</span>, a passionate Salesforce developer dedicated to simplifying document generation for businesses. With a focus on user-friendly design and powerful functionality, Rishabh built snapPDF to streamline your Salesforce workflows.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-800 text-white py-6 text-center">
+        <p>Created by Rishabh Jain</p>
+        <p class="mt-2">Contact: <a href="mailto:nirpatyarishabh5855@gmail.com" class="underline">nirpatyarishabh5855@gmail.com</a> | Follow on <a href="https://x.com/rishabhjain" target="_blank" class="underline">X</a></p>
+    </footer>
+
+    <!-- Sticky CTA Banner -->
+    <div class="cta-banner fixed bottom-0 left-0 right-0 bg-blue-600 text-white py-3 text-center z-50" data-aos="fade-up">
+        <p>Ready to streamline your Salesforce workflows? <a href="https://appexchange.salesforce.com/" target="_blank" class="underline font-semibold">Get snapPDF Now!</a></p>
+        <button class="cta-close absolute top-2 right-2 text-white">✕</button>
+    </div>
+
+    <!-- Load external scripts -->
+    <script src="scripts.js"></script>
+</body>
+</html>
